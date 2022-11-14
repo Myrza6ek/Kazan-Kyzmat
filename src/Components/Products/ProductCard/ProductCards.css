@@ -1,0 +1,6 @@
+.prodCard {
+  transition: 0.4s;
+}
+.prodCard:hover {
+  transform: scale(1.03);
+}

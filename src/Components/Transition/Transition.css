@@ -1,0 +1,26 @@
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 330px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.mySwiper {
+  /* position: relative; */
+  /* padding: 10px 0; */
+  /* background-color: rgba(168, 192, 191, 0.864); */
+  background-color: rgba(51, 29, 108, 0.761);
+}

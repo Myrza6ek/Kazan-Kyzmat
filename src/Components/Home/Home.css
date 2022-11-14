@@ -1,0 +1,18 @@
+.main_box {
+  background-image: url("./media/P1012838-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 0;
+  /* padding-bottom: 10px; */
+}
+
+.content-box {
+  /* position: relative; */
+  /* width: 80%; */
+  padding: 10px 0;
+  /* padding-bottom: 10px; */
+  background-color: rgba(168, 192, 191, 0.893);
+  /* background-color: rgb(52, 8, 3); */
+  /* color:brown */
+}
