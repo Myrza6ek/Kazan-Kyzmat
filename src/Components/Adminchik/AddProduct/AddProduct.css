@@ -1,0 +1,13 @@
+#add-title {
+  margin: 20px auto;
+  /* width: 15%; */
+  font-size: 40px;
+  text-align: center;
+  /* color: */
+}
+#form-add {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

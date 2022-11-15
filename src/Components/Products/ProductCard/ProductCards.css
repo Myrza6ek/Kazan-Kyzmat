@@ -1,6 +1,11 @@
-.prodCard {
-  transition: 0.4s;
+.prod_card:hover {
+  /* background-color: aliceblue; */
+  background-color: rgba(216, 216, 217, 0.976);
+  transform: scale(1.08);
+  transition: 0.5s;
+  color: rgb(1, 51, 51);
+  /* transition-duration: 0.3s; */
 }
-.prodCard:hover {
-  transform: scale(1.03);
-}
+/* .prod_card::after {
+  background-color: rgba(240, 248, 255, 0.132);
+} */

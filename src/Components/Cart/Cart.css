@@ -1,0 +1,179 @@
+.box_main_cart {
+  padding: 80px 0;
+  background-image: url("../Home/media/kurj.jpg");
+  background-size: 800px;
+}
+/* ! КОРЗИНА drawer start */
+.cartItem {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+.overlay {
+  margin: 50px auto;
+  /* padding: 150px 0; */
+
+  position: relative;
+  /* left: 50px; */
+  /* top: 110px; */
+  /* bottom: 110px; */
+  /* right: 0; */
+  /* background: rgba(228, 223, 223, 0.515); */
+  width: 60%;
+  height: 100%;
+  z-index: 1;
+}
+.drawer {
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+  /* width: 420px; */
+  height: 100%;
+  right: 0;
+  /* background: #ffffff77; */
+  /* box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01); */
+  padding: 30px;
+  /* margin: 20px auto; */
+}
+.drawer-korzina {
+  display: flex;
+  justify-content: space-between;
+  /* position: absolute; */
+  /* width: 420px; */
+  /* height: 100%; */
+  /* right: 0; */
+  /* background: #ffffff; */
+  /* box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01); */
+  padding: 30px;
+}
+.first_items {
+  /* flex: 1; */
+  /* overflow: auto; */
+  margin-bottom: 40px;
+  padding: 60px;
+}
+h2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  margin: 10px;
+}
+h2 img {
+  cursor: pointer;
+}
+.cartItem {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-evenly;
+  border: 1px solid #3f3f3f98;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  overflow: hidden;
+}
+.cartItemImg {
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-position: 0 10px;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+}
+.cartItem-img {
+  margin-right: 20px;
+}
+.cartItem-p {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 20px;
+}
+.cartItem-kroc {
+  margin-bottom: 5px;
+}
+.cartItem p,
+b {
+  font-size: 14px;
+  margin: 0;
+}
+.removeBtn {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.15s ease-in-out;
+}
+.removeBtn :hover {
+  opacity: 1;
+}
+/* ? ======КОРЗИНА drawer end ===== */
+
+/* ! ==== Итого,Налог start =====*/
+.TotalBlock {
+  display: block;
+  margin: 60px 0;
+}
+.cherta1 {
+  flex: 1;
+  /* width: 90%; */
+  height: 1px;
+  border-bottom: 3.3px dashed #b0abab;
+  position: relative;
+  /* top: -4px; */
+  /* margin: 0 7px; */
+}
+.cherta2 {
+  flex: 1;
+  height: 1px;
+  border-bottom: 1px dashed #dfdfdf;
+  position: relative;
+  top: -4px;
+  margin: 0 7px;
+}
+.itogo {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+.itogo span {
+  font-size: 20px;
+}
+.nalog {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+.cartTotalBlock .greenButton {
+  position: relative;
+}
+.cartTotalBlock .greenButton img:hover {
+  transform: translateX(240px);
+}
+.cartTotalBlock .greenButton img {
+  position: absolute;
+  margin: 0 20px;
+  right: 440px;
+  top: 15px;
+  transition: translateX(0.15s) ease-in-out;
+}
+/* ? === Итого,Налог end ===== */
+
+/* ! ==== button Оформить заказ ===  */
+.greenButton img {
+  position: absolute;
+  /* right: 8500px; */
+  transition: transform 1.1s ease-in-out;
+}
+.greenButton img :hover {
+  transform: translateX(5px);
+}
+.greenButton {
+  width: 100%;
+  height: 65px;
+  background: linear-gradient(90deg, #f4e90f, #f4ab0f, #f78968);
+  border-radius: 18px;
+  border: 0;
+  color: rgb(30, 5, 111);
+  font-size: 19px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* ? === button Оформить заказ end ==== */

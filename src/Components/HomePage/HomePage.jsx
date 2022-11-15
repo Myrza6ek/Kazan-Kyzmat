@@ -6,11 +6,12 @@ import MainInfo from "../MainInfo/MainInfo";
 import Transition from "../Transition/Transition";
 
 import bgshyrdak from "../Home/media/bgshyrdak.jpg";
+import AboutUs from "../AboutUs/AboutUs";
 const HomePage = () => {
   return (
     <>
       <Box className="main_box" pt="100px">
-        <Paper
+        {/* <Paper
           sx={{
             borderRadius: "0px",
             backgroundImage: `url(${bgshyrdak})`,
@@ -21,19 +22,20 @@ const HomePage = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              backgroundColor: "rgba(33, 43, 42, 0.45)",
+              backgroundColor: "rgba(239, 235, 249, 0.371)",
             }}
-            color="white"
-            fontSize="25px"
+            color="rgba(13, 16, 44, 0.9)"
+            // fontSize="25px"
             fontWeight="bold"
             padding="60px"
             variant="h3">
             Ваши хлопоты - наша забота!
           </Typography>
-        </Paper>
+        </Paper> */}
         <Transition />
         <MainInfo />
         <Home />
+        <AboutUs />
       </Box>
     </>
   );

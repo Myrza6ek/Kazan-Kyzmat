@@ -1,7 +1,7 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
-import shyrdak from "../Home/media/shyrdak.jpg";
+import shyrdak from "../Home/media/jilikter.jpg";
 
 const customTheme = createTheme({
   // palette: {
@@ -29,8 +29,9 @@ const MainInfo = () => {
   return (
     <>
       <ThemeProvider theme={customTheme}>
-        <Box>
-          <Grid my="50px" mx="auto" width="60%">
+        <Box //sx={{ backgroundColor: "rgba(239, 235, 249, 0.35)" }}
+        >
+          <Grid py="60px" mx="auto" width="60%">
             <StyledAvatar>
               <Paper
                 sx={{
@@ -39,11 +40,12 @@ const MainInfo = () => {
                 }}>
                 <Typography
                   style={{
-                    backgroundColor: "rgba(33, 43, 42, 0.75)",
+                    backgroundColor: "rgba(33, 43, 42, 0.7)",
                   }}
                   // variant="h6"
+                  // color="rgb(86, 255, 255)"
                   color="white"
-                  fontSize="25px"
+                  fontSize="20px"
                   fontWeight="bold"
                   padding="80px">
                   С древних времен кыргызы придают большое значение подаче мяса.

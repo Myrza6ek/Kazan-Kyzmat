@@ -13,8 +13,9 @@ const ProductCard = () => {
   return (
     <>
       <Card
-        className="prodCard"
+        className="prod_card"
         variant="outlined"
+        // backgroundColor="aliceblue"
         sx={{ width: 320, margin: "50px 0 0" }}>
         <Typography level="h2" fontSize="md" sx={{ mb: 0.5 }}>
           Yosemite National Park

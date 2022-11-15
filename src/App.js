@@ -1,5 +1,8 @@
 import React from "react";
 import AboutUs from "./Components/AboutUs/AboutUs";
+import AddProduct from "./Components/Adminchik/AddProduct/AddProduct";
+import EditProduct from "./Components/Adminchik/EditProduct/EditProduct";
+import Cart from "./Components/Cart/Cart";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import ModalHome from "./Components/Home/ModalHome/ModalHome";
@@ -8,19 +11,27 @@ import NavBar from "./Components/NavBar/NavBar";
 import ProductCard from "./Components/Products/ProductCard/ProductCard";
 import Servises from "./Components/servises/Servises";
 import SideBar from "./Components/SideBar/SideBar";
+import AuthenticContextProvider from "./Contexts/AuthenticContextProvider";
+import MainRoutes from "./MainRotes";
 
 const App = () => {
   return (
     <>
-      {/* <SideBar /> */}
-      <NavBar />
-      <HomePage />
-      <ModalHome />
-      <AboutUs />
-      <Servises />
-      {/* <ProductCard /> */}
+      <AuthenticContextProvider>
+        {/* <SideBar /> */}
+        <NavBar />
+        <MainRoutes />
+        {/* <Cart /> */}
+        {/* <AddProduct />
+      <EditProduct /> */}
+        {/* <HomePage /> */}
+        {/* <ModalHome /> */}
 
-      <Footer />
+        {/* <Servises /> */}
+        {/* <ProductCard /> */}
+
+        <Footer />
+      </AuthenticContextProvider>
     </>
   );
 };

@@ -1,12 +1,7 @@
 import React from "react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-import SwiperCore, {
-  Autoplay,
-  EffectCoverflow,
-  Navigation,
-  Pagination,
-} from "swiper";
+import SwiperCore, { Autoplay, EffectCoverflow, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "../Transition/Transition.css";
 import jurta16 from "../Home/media/jurta16.jpg";
@@ -38,8 +33,8 @@ const Transition = () => {
           slideShadows: true,
         }}
         pagination={{ clickable: true }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        // navigation={true}
+        modules={[Autoplay, Pagination]}
         className="mySwiper">
         <SwiperSlide>
           <img src={jurta16} alt="" />

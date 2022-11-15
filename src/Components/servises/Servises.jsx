@@ -67,9 +67,12 @@ const Servises = () => {
         <Box
           p="120px 180px 90px"
           sx={{
-            color: "white",
+            fontWeight: "bold",
+            // fontSize: "100px",
+            color: "rgb(114, 249, 249)",
             flexGrow: 1,
-            bgcolor: "rgba(51, 29, 108, 0.761)",
+            // bgcolor: "rgba(51, 29, 108, 0.761)",
+            bgcolor: "rgb(60 57 67 / 74%)",
             display: "flex",
             height: "auto",
           }}>
@@ -81,61 +84,37 @@ const Servises = () => {
             aria-label="Vertical tabs example"
             sx={{ width: "30%", borderRight: 4, borderColor: "divider" }}>
             <Tab
-              style={{ color: "white" }}
+              style={{ color: "orange" }}
               label="Item One"
               {...a11yProps(0)}
             />
             <Tab
-              style={{ color: "white" }}
+              style={{ color: "orange" }}
               label="Item Two"
               {...a11yProps(1)}
             />
             <Tab
-              style={{ color: "white" }}
+              style={{ color: "orange" }}
               label="Item Three"
               {...a11yProps(2)}
             />
             <Tab
-              style={{ color: "white" }}
+              style={{ color: "orange" }}
               label="Item Four"
               {...a11yProps(3)}
             />
-            <Tab
-              style={{ color: "white" }}
-              label="Item Five"
-              {...a11yProps(4)}
-            />
-            <Tab
-              style={{ color: "white" }}
-              label="Item Six"
-              {...a11yProps(5)}
-            />
-            <Tab
-              style={{ color: "white" }}
-              label="Item Seven"
-              {...a11yProps(6)}
-            />
           </Tabs>
           <TabPanel value={value} index={0}>
-            Item One
+            <Typography color="orange">Item One</Typography>
           </TabPanel>
           <TabPanel value={value} index={1}>
-            Item Two
+            <Typography color="orange">Item Two</Typography>
           </TabPanel>
           <TabPanel value={value} index={2}>
-            Item Three
+            <Typography color="orange">Item 3</Typography>
           </TabPanel>
           <TabPanel value={value} index={3}>
-            Item Four
-          </TabPanel>
-          <TabPanel value={value} index={4}>
-            Item Five
-          </TabPanel>
-          <TabPanel value={value} index={5}>
-            Item Six
-          </TabPanel>
-          <TabPanel value={value} index={6}>
-            Item Seven
+            <Typography color="orange">Item 4</Typography>
           </TabPanel>
         </Box>
       </Box>

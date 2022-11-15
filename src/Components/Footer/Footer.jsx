@@ -68,6 +68,10 @@ const Footer = () => {
           </p>
         </div>
 
+        <div style={{ margin: "0 60px" }}>
+          <h3>+996 700 983 143</h3>
+        </div>
+
         <div className="logos-icon">
           <div>
             <img src={insta} alt="instagram" />
