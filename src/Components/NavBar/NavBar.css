@@ -6,3 +6,7 @@
   /* background-color:rgb(13, 16, 44) ; */
   /* background-color: linear-gradient(90deg, #4eba10d4 0, #f6ef36 51%, #f9ce88); */
 }
+.link-span {
+  text-decoration: none;
+  color: darkorange;
+}

@@ -7,6 +7,7 @@ import Transition from "../Transition/Transition";
 
 import bgshyrdak from "../Home/media/bgshyrdak.jpg";
 import AboutUs from "../AboutUs/AboutUs";
+import ConCom from "../ConCom/ConCom";
 const HomePage = () => {
   return (
     <>
@@ -36,6 +37,7 @@ const HomePage = () => {
         <MainInfo />
         <Home />
         <AboutUs />
+        <ConCom />
       </Box>
     </>
   );

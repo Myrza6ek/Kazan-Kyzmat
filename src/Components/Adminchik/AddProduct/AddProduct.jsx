@@ -1,14 +1,53 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Box, Button, Paper, TextField } from "@mui/material";
+import { productContext } from "../../../Contexts/ProductContextProvider";
 
 import "./AddProduct.css";
 
 const AddProduct = () => {
-  const [value, setValue] = React.useState("Controlled");
+  const { addProduct } = useContext(productContext);
+  const [category, setCategory] = useState("");
+  const [fio, setFio] = useState("");
+  const [numberTel, setNumberTel] = useState("");
+  const [activity, setActivity] = useState("");
+  const [price, setPrice] = useState(0);
+  const [img, setImg] = useState("");
+  const [description, setDescription] = useState("");
 
-  const handleChange = event => {
-    setValue(event.target.value);
-  };
+  function handleAdd(e) {
+    e.preventDefault(); // останавливает автообновление бразуреа при отправке данных через form
+    if (
+      !category.trim() ||
+      !fio.trim() ||
+      !numberTel.trim() ||
+      !activity.trim() ||
+      !price.trim() ||
+      !img.trim() ||
+      !description.trim()
+    ) {
+      alert("Заполните все поля!");
+      return;
+    }
+
+    let obj = {
+      category,
+      fio,
+      numberTel,
+      activity,
+      price: +price,
+      img,
+      description,
+    };
+    console.log(obj);
+    addProduct(obj);
+    setCategory("");
+    setFio("");
+    setNumberTel("");
+    setActivity("");
+    setPrice(0);
+    setImg("");
+    setDescription("");
+  }
   return (
     <>
       add
@@ -28,97 +67,117 @@ const AddProduct = () => {
           }}
           elevation={9}>
           <h2 id="add-title">Добавление услуги</h2>
-          <form
-            id="form-add" //onSubmit={e => handleAdd(e)}
-          >
-            <TextField
+          <form id="form-add" onSubmit={e => handleAdd(e)}>
+            <Box
               sx={{
-                backgroundColor: "white",
-                borderRadius: "5px",
-                margin: "10px 0",
-              }}
-              label="Категория"
-              variant="outlined"
-              // value={category}
-              // onChange={e => setCategory(e.target.value)}
-            />
-            <TextField
-              sx={{
-                backgroundColor: "white",
-                borderRadius: "5px",
-                margin: "10px 0",
-              }}
-              label="ФИО"
-              variant="outlined"
-              // value={title}
-              // onChange={e => setTitle(e.target.value)}
-            />
-            <TextField
-              sx={{
-                backgroundColor: "white",
-                borderRadius: "5px",
-                margin: "10px 0",
-              }}
-              label="Номер телефона"
-              variant="outlined"
-              // value={subCategory}
-              // onChange={e => setSubCategory(e.target.value)}
-            />
+                display: "flex",
+                flexWrap: "wrap",
+                // flexDirection: "column",
+                justifyContent: "space-around",
+                alignItems: "center",
+                padding: "20px",
+                mx: "auto",
+                width: "100%",
+                // bgcolor: "#818987ca",
+              }}>
+              <TextField
+                sx={{
+                  width: "45%",
+                  backgroundColor: "white",
+                  borderRadius: "5px",
+                  margin: "10px ",
+                }}
+                label="Категория"
+                variant="outlined"
+                value={category}
+                onChange={e => setCategory(e.target.value)}
+              />
+              <TextField
+                sx={{
+                  width: "45%",
+                  backgroundColor: "white",
+                  borderRadius: "5px",
+                  margin: "10px ",
+                }}
+                label="ФИО"
+                variant="outlined"
+                value={fio}
+                onChange={e => setFio(e.target.value)}
+              />
+              <TextField
+                sx={{
+                  width: "45%",
+                  backgroundColor: "white",
+                  borderRadius: "5px",
+                  margin: "10px ",
+                }}
+                type="number"
+                label="Номер телефона"
+                variant="outlined"
+                value={numberTel}
+                onChange={e => setNumberTel(e.target.value)}
+              />
 
-            <TextField
-              sx={{
-                backgroundColor: "white",
-                borderRadius: "5px",
-                margin: "10px 0",
-              }}
-              label="Деятельность"
-              variant="outlined"
-              // value={description}
-              // onChange={e => setDescription(e.target.value)}
-            />
+              <TextField
+                sx={{
+                  width: "45%",
+                  backgroundColor: "white",
+                  borderRadius: "5px",
+                  margin: "10px ",
+                }}
+                label="Деятельность"
+                variant="outlined"
+                value={activity}
+                onChange={e => setActivity(e.target.value)}
+              />
 
-            <TextField
-              sx={{
-                backgroundColor: "white",
-                borderRadius: "5px",
-                margin: "10px 0",
-              }}
-              type="number"
-              label="Цена услуги"
-              variant="outlined"
-              // value={price}
-              // onChange={e => setPrice(e.target.value)}
-            />
-            <TextField
-              sx={{
-                backgroundColor: "white",
-                borderRadius: "5px",
-                margin: "10px 0",
-              }}
-              label="Фото 1"
-              variant="outlined"
-              // value={img1}
-              // onChange={e => setImg1(e.target.value)}
-            />
-            <TextField
-              sx={{
-                width: "29%",
-                backgroundColor: "white",
-                borderRadius: "5px",
-                margin: "10px 0",
-              }}
-              label="Описание"
-              placeholder="Placeholder"
-              multiline
-            />
+              <TextField
+                sx={{
+                  width: "45%",
+                  backgroundColor: "white",
+                  borderRadius: "5px",
+                  margin: "10px ",
+                }}
+                type="number"
+                label="Цена услуги"
+                variant="outlined"
+                value={price}
+                onChange={e => setPrice(e.target.value)}
+              />
+              <TextField
+                sx={{
+                  width: "45%",
+                  backgroundColor: "white",
+                  borderRadius: "5px",
+                  margin: "10px ",
+                }}
+                label="Фото"
+                variant="outlined"
+                value={img}
+                onChange={e => setImg(e.target.value)}
+              />
+              <TextField
+                sx={{
+                  width: "59%",
+                  backgroundColor: "white",
+                  borderRadius: "5px",
+                  margin: "10px ",
+                }}
+                label="Описание"
+                placeholder="Placeholder"
+                multiline
+                value={description}
+                onChange={e => setDescription(e.target.value)}
+              />
+            </Box>
+            <Button
+              sx={{ my: "30px", width: "30%" }}
+              variant="contained"
+              color="secondary"
+              type="submit">
+              Добавить
+            </Button>
           </form>
-          <Button
-            sx={{ my: "30px", width: "30%" }}
-            variant="contained"
-            color="secondary"
-            type="submit">
-            Добавить
-          </Button>
         </Paper>
       </Box>
     </>

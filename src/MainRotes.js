@@ -10,6 +10,8 @@ import Authentic from "./Components/Authentic/Authentic";
 import AddProduct from "./Components/Adminchik/AddProduct/AddProduct";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Servises from "./Components/servises/Servises";
+import ConCom from "./Components/ConCom/ConCom";
+import EditProduct from "./Components/Adminchik/EditProduct/EditProduct";
 
 const MainRoutes = () => {
   return (
@@ -18,10 +20,11 @@ const MainRoutes = () => {
       <Route path="/auth" element={<Authentic />} />
       <Route path="/about" element={<AboutUs />} />
       <Route path="/add" element={<AddProduct />} />
-      <Route path="/list" element={<ProductList />} />
+      {/* <Route path="/list" element={<ProductList />} /> */}
       <Route path="/servises" element={<Servises />} />
+      <Route path="/contactus" element={<ConCom />} />
       {/* <Route path="/details/:id" element={<ProductDetails />} /> */}
-      {/* <Route path="/edit/:id" element={<EditProduct />} /> */}
+      <Route path="/edit/:id" element={<EditProduct />} />
     </Routes>
   );
 };

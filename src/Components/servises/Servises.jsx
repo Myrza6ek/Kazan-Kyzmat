@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 import "../Home/Home.css";
 import ProductList from "../Products/ProductList/ProductList";
+import ProductCard from "../Products/ProductCard/ProductCard";
+import { productContext } from "../../Contexts/ProductContextProvider";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+  const { productsArr, readProduct } = useContext(productContext);
+
+  useEffect(() => {
+    readProduct();
+  }, []);
 
   return (
     <div
@@ -30,11 +37,17 @@ function TabPanel(props) {
               justifyContent: "space-evenly",
               flexWrap: "wrap",
             }}>
-            <ProductList />
-            <ProductList />
-            <ProductList />
-            <ProductList />
-            <ProductList />
+            {productsArr
+              ? productsArr.map(item => (
+                  <Grid item={true} xs={3.5} mb={7} key={item.id}>
+                    <ProductCard obj={item} />
+                  </Grid>
+                ))
+              : null}
+            {/* <ProductCard /> */}
+            {/* <ProductCard />
+            <ProductCard />
+            <ProductCard /> */}
           </Box>
         </Box>
       )}
@@ -61,6 +74,13 @@ const Servises = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const { productsArr, readProduct } = useContext(productContext);
+
+  useEffect(() => {
+    readProduct();
+  }, []);
+
   return (
     <>
       <Box className="main_box" width="100%">

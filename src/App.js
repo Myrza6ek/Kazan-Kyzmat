@@ -3,6 +3,7 @@ import AboutUs from "./Components/AboutUs/AboutUs";
 import AddProduct from "./Components/Adminchik/AddProduct/AddProduct";
 import EditProduct from "./Components/Adminchik/EditProduct/EditProduct";
 import Cart from "./Components/Cart/Cart";
+import ConCom from "./Components/ConCom/ConCom";
 import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import ModalHome from "./Components/Home/ModalHome/ModalHome";
@@ -12,25 +13,29 @@ import ProductCard from "./Components/Products/ProductCard/ProductCard";
 import Servises from "./Components/servises/Servises";
 import SideBar from "./Components/SideBar/SideBar";
 import AuthenticContextProvider from "./Contexts/AuthenticContextProvider";
+import ProductContextProvider from "./Contexts/ProductContextProvider";
 import MainRoutes from "./MainRotes";
 
 const App = () => {
   return (
     <>
       <AuthenticContextProvider>
-        {/* <SideBar /> */}
-        <NavBar />
-        <MainRoutes />
-        {/* <Cart /> */}
-        {/* <AddProduct />
+        <ProductContextProvider>
+          {/* <SideBar /> */}
+          <NavBar />
+          <MainRoutes />
+          {/* <ConCom /> */}
+          {/* <Cart /> */}
+          {/* <AddProduct />
       <EditProduct /> */}
-        {/* <HomePage /> */}
-        {/* <ModalHome /> */}
+          {/* <HomePage /> */}
+          {/* <ModalHome /> */}
 
-        {/* <Servises /> */}
-        {/* <ProductCard /> */}
+          {/* <Servises /> */}
+          {/* <ProductCard /> */}
 
-        <Footer />
+          <Footer />
+        </ProductContextProvider>
       </AuthenticContextProvider>
     </>
   );

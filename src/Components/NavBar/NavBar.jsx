@@ -18,13 +18,13 @@ import { Link as Rlink, NavLink } from "react-router-dom";
 import "./NavBar.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 // import { Navigate, useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { authContext } from "../../Contexts/AuthenticContextProvider";
 import LiveSearch from "../LiveSearch/LiveSearch";
 import imagesed from "./medi/images.png";
 
 function NavBar() {
-  const location = useLocation();
+  // const location = useLocation();
 
   const { user, handleLogout } = React.useContext(authContext);
 
@@ -143,15 +143,14 @@ function NavBar() {
             sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
-          <NavBar>
-            <CardMedia
-              style={{ width: "6%", margin: "0 20px", borderRadius: "50px" }}
-              component="img"
-              // height="80"
-              image={imagesed}
-              alt="logo"
-            />
-          </NavBar>
+
+          <CardMedia
+            style={{ width: "5%", margin: "0 20px", borderRadius: "50px" }}
+            component="img"
+            // height="80"
+            image={imagesed}
+            alt="logo"
+          />
 
           {/* <Typography
             variant="h6"
@@ -178,9 +177,9 @@ function NavBar() {
               </NavLink>
             </IconButton>
           ) : (
-            <Link to="/">
+            <Rlink className="link-span" to="/">
               {user.email ? user.email : <span>Не вошли</span>}
-            </Link>
+            </Rlink>
           )}
 
           <Box sx={{ flexGrow: 3 }} />
@@ -199,18 +198,7 @@ function NavBar() {
                 textDecoration: "none",
               }}
               className="link-nav">
-              <Typography p="2px 10px">Homepage</Typography>
-            </NavLink>
-            <NavLink
-              to="/about"
-              style={{
-                borderRadius: "3px",
-                background: "rgba(255, 136, 0, 0.504)",
-                color: "white",
-                textDecoration: "none",
-              }}
-              className="link-nav">
-              <Typography p="2px 10px">about us</Typography>
+              <Typography p="2px 10px">BASHKY page</Typography>
             </NavLink>
             <NavLink
               to="/servises"
@@ -221,7 +209,29 @@ function NavBar() {
                 textDecoration: "none",
               }}
               className="link-nav">
-              <Typography p=" 2px 10px">наши услуги</Typography>
+              <Typography p=" 2px 10px">Uslugalar</Typography>
+            </NavLink>
+            <NavLink
+              to="/about"
+              style={{
+                borderRadius: "3px",
+                background: "rgba(255, 136, 0, 0.504)",
+                color: "white",
+                textDecoration: "none",
+              }}
+              className="link-nav">
+              <Typography p="2px 10px">About биз</Typography>
+            </NavLink>
+            <NavLink
+              to="/contactus"
+              style={{
+                borderRadius: "3px",
+                background: "rgba(255, 136, 0, 0.504)",
+                color: "white",
+                textDecoration: "none",
+              }}
+              className="link-nav">
+              <Typography p="2px 10px">Contactы</Typography>
             </NavLink>
             <Link
               style={{
@@ -233,19 +243,7 @@ function NavBar() {
                 color: "white",
                 textDecoration: "none",
               }}>
-              <Typography p="2px 10px">Контакты</Typography>
-            </Link>
-            <Link
-              style={{
-                borderRadius: "3px",
-              }}
-              className="link-nav"
-              sx={{
-                background: "rgba(255, 136, 0, 0.504)",
-                color: "white",
-                textDecoration: "none",
-              }}>
-              <Typography p="2px 10px">рецепты</Typography>
+              <Typography p="2px 10px">Recipes</Typography>
             </Link>
           </Box>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
