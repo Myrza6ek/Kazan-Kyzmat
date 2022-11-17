@@ -36,7 +36,7 @@ const HomePage = () => {
         <Transition />
         <MainInfo />
         <Home />
-        <AboutUs />
+        {/* <AboutUs /> */}
         {/* <ConCom /> */}
       </Box>
     </>
