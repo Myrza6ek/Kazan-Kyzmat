@@ -1,24 +1,20 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Pagination } from "@mui/material";
 
 import "../Home/Home.css";
-import ProductList from "../Products/ProductList/ProductList";
-import ProductCard from "../Products/ProductCard/ProductCard";
+
 import { productContext } from "../../Contexts/ProductContextProvider";
+import ProductList from "../Products/ProductList/ProductList";
+import LiveSearch from "../LiveSearch/LiveSearch";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-  const { productsArr, readProduct } = useContext(productContext);
-
-  useEffect(() => {
-    readProduct();
-  }, []);
 
   return (
     <div
@@ -29,26 +25,10 @@ function TabPanel(props) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}>
       {value === index && (
-        <Box sx={{ px: 8 }}>
+        <Box sx={{ px: 7, width: "90%" }}>
           <Typography>{children}</Typography>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-evenly",
-              flexWrap: "wrap",
-            }}>
-            {productsArr
-              ? productsArr.map(item => (
-                  <Grid item={true} xs={3.5} mb={7} key={item.id}>
-                    <ProductCard obj={item} />
-                  </Grid>
-                ))
-              : null}
-            {/* <ProductCard /> */}
-            {/* <ProductCard />
-            <ProductCard />
-            <ProductCard /> */}
-          </Box>
+          <LiveSearch />
+          <ProductList />
         </Box>
       )}
     </div>
@@ -83,16 +63,16 @@ const Servises = () => {
 
   return (
     <>
-      <Box className="main_box" width="100%">
+      <Box className="main_box">
         <Box
-          p="120px 180px 90px"
+          p="120px 90px"
           sx={{
             fontWeight: "bold",
             // fontSize: "100px",
             color: "rgb(114, 249, 249)",
             flexGrow: 1,
             // bgcolor: "rgba(51, 29, 108, 0.761)",
-            bgcolor: "rgb(60 57 67 / 74%)",
+            bgcolor: "rgb(60 57 67 / 50%)",
             display: "flex",
             height: "auto",
           }}>
@@ -102,39 +82,105 @@ const Servises = () => {
             value={value}
             onChange={handleChange}
             aria-label="Vertical tabs example"
-            sx={{ width: "30%", borderRight: 4, borderColor: "divider" }}>
+            sx={{
+              mt: "55px",
+              width: "100%",
+              height: "500px",
+              backgroundColor: "rgba(249, 246, 246, 0.968)",
+              borderRight: 4,
+              borderColor: "orange",
+            }}>
             <Tab
+              sx={{ my: "5px" }}
               style={{ color: "orange" }}
-              label="Item One"
+              label="Все категории"
               {...a11yProps(0)}
             />
             <Tab
+              sx={{ my: "5px" }}
               style={{ color: "orange" }}
-              label="Item Two"
+              label="Бокол по барашкам"
               {...a11yProps(1)}
             />
             <Tab
+              sx={{ my: "5px" }}
               style={{ color: "orange" }}
-              label="Item Three"
+              label="Бокол по уйам"
               {...a11yProps(2)}
             />
             <Tab
+              sx={{ my: "5px" }}
               style={{ color: "orange" }}
-              label="Item Four"
+              label="бокол по жылкылар"
+              {...a11yProps(3)}
+            />
+            <Tab
+              sx={{ my: "5px" }}
+              style={{ color: "orange" }}
+              label="Келинка на час"
               {...a11yProps(3)}
             />
           </Tabs>
           <TabPanel value={value} index={0}>
-            <Typography color="orange">Item One</Typography>
+            <Typography
+              variant="h6"
+              borderRadius="4px"
+              textAlign="center"
+              mx="auto"
+              width="30%"
+              color="orange"
+              backgroundColor="rgba(249, 246, 246, 0.868)">
+              Все категории
+            </Typography>
+            {/* <ProductList /> */}
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <Typography color="orange">Item Two</Typography>
+            <Typography
+              variant="h6"
+              borderRadius="4px"
+              textAlign="center"
+              mx="auto"
+              width="30%"
+              color="orange"
+              backgroundColor="rgba(249, 246, 246, 0.868)">
+              бокол по барашкам
+            </Typography>
           </TabPanel>
           <TabPanel value={value} index={2}>
-            <Typography color="orange">Item 3</Typography>
+            <Typography
+              variant="h6"
+              borderRadius="4px"
+              textAlign="center"
+              mx="auto"
+              width="30%"
+              color="orange"
+              backgroundColor="rgba(249, 246, 246, 0.868)">
+              бокол по уйам
+            </Typography>
           </TabPanel>
           <TabPanel value={value} index={3}>
-            <Typography color="orange">Item 4</Typography>
+            <Typography
+              variant="h6"
+              borderRadius="4px"
+              textAlign="center"
+              mx="auto"
+              width="30%"
+              color="orange"
+              backgroundColor="rgba(249, 246, 246, 0.868)">
+              бокол по жылкы
+            </Typography>
+          </TabPanel>
+          <TabPanel value={value} index={4}>
+            <Typography
+              variant="h6"
+              borderRadius="4px"
+              textAlign="center"
+              mx="auto"
+              width="30%"
+              color="orange"
+              backgroundColor="rgba(249, 246, 246, 0.868)">
+              келинка на час
+            </Typography>
           </TabPanel>
         </Box>
       </Box>

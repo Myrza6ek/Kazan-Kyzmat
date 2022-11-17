@@ -2,6 +2,8 @@
   padding: 80px 0;
   background-image: url("../Home/media/kurj.jpg");
   background-size: 800px;
+
+  /* background-color: rgba(227, 221, 221, 0.769); */
 }
 /* ! КОРЗИНА drawer start */
 .cartItem {
@@ -32,7 +34,7 @@
   right: 0;
   /* background: #ffffff77; */
   /* box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01); */
-  padding: 30px;
+  padding: 20px;
   /* margin: 20px auto; */
 }
 .drawer-korzina {
@@ -44,13 +46,13 @@
   /* right: 0; */
   /* background: #ffffff; */
   /* box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01); */
-  padding: 30px;
+  padding: 10px;
 }
 .first_items {
   /* flex: 1; */
   /* overflow: auto; */
   margin-bottom: 40px;
-  padding: 60px;
+  padding: 20px;
 }
 h2 {
   display: flex;
@@ -64,7 +66,7 @@ h2 img {
 .cartItem {
   display: flex;
   /* flex-wrap: wrap; */
-  justify-content: space-evenly;
+  justify-content: space-around;
   border: 1px solid #3f3f3f98;
   margin-bottom: 20px;
   border-radius: 20px;
@@ -86,11 +88,11 @@ h2 img {
   display: flex;
   flex-direction: column;
 
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
-.cartItem-kroc {
+/* .cartItem-kroc {
   margin-bottom: 5px;
-}
+} */
 .cartItem p,
 b {
   font-size: 14px;
@@ -108,8 +110,9 @@ b {
 
 /* ! ==== Итого,Налог start =====*/
 .TotalBlock {
-  display: block;
-  margin: 60px 0;
+  display: flex;
+  /* justify-content: end; */
+  /* margin: 60px; */
 }
 .cherta1 {
   flex: 1;
@@ -130,7 +133,9 @@ b {
 }
 .itogo {
   display: flex;
+  /* justify-content: flex-start; */
   align-items: flex-end;
+  width: 300%;
   margin-bottom: 20px;
 }
 .itogo span {
@@ -141,6 +146,12 @@ b {
   align-items: flex-end;
   margin-bottom: 20px;
 }
+.cartTotalBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .cartTotalBlock .greenButton {
   position: relative;
 }
@@ -149,7 +160,7 @@ b {
 }
 .cartTotalBlock .greenButton img {
   position: absolute;
-  margin: 0 20px;
+  margin: 0 autp;
   right: 440px;
   top: 15px;
   transition: translateX(0.15s) ease-in-out;
@@ -166,8 +177,9 @@ b {
   transform: translateX(5px);
 }
 .greenButton {
-  width: 100%;
+  width: 80%;
   height: 65px;
+  /* margin: 0 auto; */
   background: linear-gradient(90deg, #f4e90f, #f4ab0f, #f78968);
   border-radius: 18px;
   border: 0;

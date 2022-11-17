@@ -1,7 +1,16 @@
 import { Box, Card, Typography } from "@mui/material";
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { commentcontext } from "../../Contexts/ComContextProvider";
 import "./AboutUs.css";
+
 const AboutUs = () => {
+  const { readComment, commentsArr } = useContext(commentcontext);
+
+  useEffect(() => {
+    readComment();
+  }, []);
+  // console.log(readComment());
+  // console.log(commentsArr);
   return (
     <Box className="box_aboutUs">
       <Box
@@ -22,9 +31,9 @@ const AboutUs = () => {
           </Typography>
         </Card>
 
-        <br />
         <Box
           sx={{
+            margin: "20px 0",
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
@@ -42,6 +51,7 @@ const AboutUs = () => {
               quae ut porro repudiandae eum, similique culpa
             </Typography>
           </Card>
+
           <Card sx={{ ml: "10px" }}>
             <Typography variant="h5" padding="50px" color="rgb(52, 8, 3)">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
@@ -55,7 +65,25 @@ const AboutUs = () => {
             </Typography>
           </Card>
         </Box>
-        <br />
+        {/* 
+        {commentsArr.length ? (
+          commentsArr.map(item => (
+            <Card
+              sx={{
+                width: "50%",
+                margin: "20px auto",
+                padding: "30px",
+                fontSize: "large",
+              }}
+              key={item.id}>
+              Комментарии:
+              <Typography variant="h4">{item.name}</Typography>
+              <Typography variant="h6">{item.comment}</Typography>
+            </Card>
+          ))
+        ) : (
+          <h1>error</h1>
+        )} */}
         <Card>
           <Typography variant="h6" padding="70px">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat

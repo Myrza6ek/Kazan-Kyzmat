@@ -7,11 +7,51 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { authContext } from "../../Contexts/AuthenticContextProvider";
+import { commentcontext } from "../../Contexts/ComContextProvider";
 // import "../ConCom/ConCom.css";
 import map from "./medi/map.jpg";
 
 const ConCom = () => {
+  const { readComment, commentsArr } = useContext(commentcontext);
+
+  useEffect(() => {
+    readComment();
+  }, []);
+
+  const { AddComment, deleteComment } = useContext(commentcontext);
+  const { user } = useContext(authContext);
+
+  const [comment, setComment] = useState("");
+  const [name, setName] = useState("");
+  // let time = new Date();
+  // let hours = time.getHours();
+  // let minute = time.getMinutes();
+  // let Alltime = {
+  //   hours,
+  //   minute,
+  // };
+  function handleAdd(e) {
+    e.preventDefault();
+    if (!comment.trim() || !name.trim()) {
+      alert("Заполните все поля!");
+      return;
+    }
+
+    let obj = {
+      user: user.email,
+      name,
+      comment,
+      // card: productDetails.id,
+      // hour: Alltime.hours,
+      // minute: Alltime.minute,
+    };
+    AddComment(obj);
+    setName("");
+    setComment("");
+  }
+
   return (
     <>
       <Box
@@ -57,7 +97,7 @@ const ConCom = () => {
             If you have more questions, complete the form below and we will be
             in touch as soon as possible:
           </Typography>
-          <TextField
+          {/* <TextField
             sx={{
               width: "90%",
               backgroundColor: "white",
@@ -65,10 +105,11 @@ const ConCom = () => {
               margin: "10px 0",
             }}
             label="Email"
+            // value={user}
             variant="outlined"
             // value={category}
             // onChange={e => setCategory(e.target.value)}
-          />
+          /> */}
           <TextField
             sx={{
               width: "90%",
@@ -77,6 +118,8 @@ const ConCom = () => {
               margin: "10px 0",
             }}
             label="Name"
+            value={name}
+            onChange={e => setName(e.target.value)}
             variant="outlined"
             // value={category}
             // onChange={e => setCategory(e.target.value)}
@@ -90,16 +133,52 @@ const ConCom = () => {
             }}
             id="outlined-multiline-static"
             label="Comment"
+            value={comment}
             multiline
             rows={6}
+            onChange={e => setComment(e.target.value)}
           />
           <Button
             sx={{ my: "30px", width: "30%" }}
             variant="contained"
             color="secondary"
-            type="submit">
+            onClick={e => handleAdd(e)}>
             Отправить
           </Button>
+          <br />
+          <br />
+
+          <Typography sx={{}}>Comments:</Typography>
+
+          {commentsArr.length ? (
+            commentsArr.map(item => (
+              <Box
+                sx={{ display: "flex", alignItems: "flex-start" }}
+                key={item.id}>
+                <Card
+                  sx={{
+                    width: "100%",
+                    margin: "20px auto",
+                    padding: "30px",
+                    fontSize: "large",
+                  }}>
+                  <Typography variant="h4">{item.name}</Typography>
+                  <Typography sx={{ padding: "20px" }} variant="h6">
+                    {item.comment}
+                  </Typography>
+                </Card>
+                {user.email === "foolbull35@gmail.com" ? (
+                  <Button
+                    sx={{ m: "20px 0" }}
+                    onClick={() => deleteComment(item.id)}>
+                    del
+                  </Button>
+                ) : null}
+              </Box>
+            ))
+          ) : (
+            <h1>error</h1>
+          )}
         </Box>
       </Box>
     </>

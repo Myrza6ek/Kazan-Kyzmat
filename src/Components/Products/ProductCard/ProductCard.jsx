@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
@@ -12,12 +12,19 @@ import "./ProductCards.css";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { authContext } from "../../../Contexts/AuthenticContextProvider";
 import { productContext } from "../../../Contexts/ProductContextProvider";
+import { cartContext } from "../../../Contexts/CartContextProvider";
 
 const ProductCard = ({ obj }) => {
-  const { readProduct, ProductCard, deleteProduct, setInpValues } =
+  const { readOneProduct, productCard, deleteProduct, setInpValues } =
     useContext(productContext);
+
+  const { addProductToCart } = useContext(cartContext);
   const { id } = useParams();
   const { user } = useContext(authContext);
+
+  useEffect(() => {
+    readOneProduct(obj.id);
+  }, []);
 
   const navigate = useNavigate();
 
@@ -31,20 +38,20 @@ const ProductCard = ({ obj }) => {
         className="prod_card"
         variant="outlined"
         // backgroundColor="aliceblue"
-        sx={{ width: 320, margin: "50px 0 0" }}>
+        sx={{ width: 240, margin: "20px 10px 0" }}>
         <Typography level="h1" fontSize="xl" sx={{ mb: 0.5 }}>
           {obj.fio}
         </Typography>
         <Typography level="body2">{obj.activity}</Typography>
-        <IconButton
+        {/* <IconButton
           aria-label="bookmark Bahamas Islands"
           variant="plain"
           color="neutral"
           size="sm"
           sx={{ position: "absolute", top: "0.5rem", right: "0.5rem" }}>
           <BookmarkAdd />
-        </IconButton>
-        <AspectRatio minHeight="220px" maxHeight="300px" sx={{ my: 2 }}>
+        </IconButton> */}
+        <AspectRatio minHeight="150px" maxHeight="300px" sx={{ my: 2 }}>
           <img
             style={{ width: "auto" }}
             src={obj.img}
@@ -69,7 +76,8 @@ const ProductCard = ({ obj }) => {
             size="sm"
             color="primary"
             aria-label="Explore Bahamas Islands"
-            sx={{ ml: "auto", fontWeight: 600 }}>
+            sx={{ ml: "auto", fontWeight: 600 }}
+            onClick={() => addProductToCart(obj)}>
             Order кылуу
           </Button>
         </Box>
@@ -99,6 +107,7 @@ const ProductCard = ({ obj }) => {
                 margin: "20px 0 0",
                 fontWeight: 600,
                 color: "red",
+                backgroundColor: "white",
               }}
               onClick={() => deleteProduct(obj.id)}>
               delete

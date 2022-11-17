@@ -69,7 +69,14 @@ const AuthenticContextProvider = ({ children }) => {
 
   //   выход из аккаунта
   const handleLogout = () => {
-    fire.auth().signOut();
+    let c = window.confirm("eeeeeeeeeeeeeee,tochno uhodish?");
+    if (c) {
+      fire.auth().signOut();
+    }
+    return;
+
+    // confirm("tochno" ? fire.auth().signOut() : null);
+    // fire.auth().signOut();
   };
 
   const authListener = () => {

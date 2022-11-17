@@ -53,7 +53,7 @@ const AddProduct = () => {
       add
       <br />
       app
-      <Box py="120px" backgroundColor="mediumslateblue">
+      <Box py="120px" backgroundColor="rgba(124, 104, 238, 0.795)">
         <Paper
           sx={{
             display: "flex",

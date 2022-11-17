@@ -9,6 +9,7 @@ const API = "http://localhost:8000/products";
 const INIT_STATE = {
   products: null,
   productCard: null,
+  pageTotalCount: 1,
 };
 
 function reducer(prevState, action) {
@@ -17,6 +18,7 @@ function reducer(prevState, action) {
       return {
         ...prevState,
         product: action.payload.data,
+        pageTotalCount: Math.ceil(action.payload.headers["x-total-count"] / 3),
       };
     case "GET_ONE_PRODUCT":
       return { ...prevState, productCard: action.payload };
@@ -36,6 +38,8 @@ const ProductContextProvider = props => {
   async function addProduct(newProduct) {
     try {
       await axios.post(API, newProduct);
+      readProduct();
+      navigate("/servises");
     } catch (error) {
       return error;
     }
@@ -99,6 +103,7 @@ const ProductContextProvider = props => {
 
     productsArr: state.product,
     productCard: state.productCard,
+    pageTotalCount: state.pageTotalCount,
     inpValues,
     setInpValues,
   };

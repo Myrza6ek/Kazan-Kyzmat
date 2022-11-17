@@ -16,10 +16,6 @@ const EditProduct = () => {
   const { id } = useParams();
   console.log(id);
   // const [value, setValue] = React.useState("Controlled");
-  // useEffect(() => {
-  //   readOneProduct(id);
-  // }, [id]);
-
   function handleChange(e) {
     let obj = {
       ...inpValues,
@@ -51,7 +47,7 @@ const EditProduct = () => {
   return (
     <>
       {inpValues ? (
-        <Box py="120px" backgroundColor="lightgreen">
+        <Box py="120px" backgroundColor="rgba(144, 238, 144, 0.665)">
           <Paper
             sx={{
               display: "flex",

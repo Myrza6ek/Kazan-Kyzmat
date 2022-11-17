@@ -37,7 +37,7 @@ const HomePage = () => {
         <MainInfo />
         <Home />
         <AboutUs />
-        <ConCom />
+        {/* <ConCom /> */}
       </Box>
     </>
   );

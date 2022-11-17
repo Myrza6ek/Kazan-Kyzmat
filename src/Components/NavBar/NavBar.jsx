@@ -14,7 +14,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Button, CardMedia, Link } from "@mui/material";
-import { Link as Rlink, NavLink } from "react-router-dom";
+import { Link as Rlink, NavLink, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 // import { Navigate, useNavigate } from "react-router-dom";
@@ -22,10 +22,14 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { authContext } from "../../Contexts/AuthenticContextProvider";
 import LiveSearch from "../LiveSearch/LiveSearch";
 import imagesed from "./medi/images.png";
+import { cartContext } from "../../Contexts/CartContextProvider";
 
 function NavBar() {
+  // const { readComment, commentsArr } = useContext(commentcontext);
+  // const [comment, setComment] = React.useState("");
   // const location = useLocation();
-
+  const { cartCount } = React.useContext(cartContext);
+  const location = useLocation();
   const { user, handleLogout } = React.useContext(authContext);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -200,17 +204,23 @@ function NavBar() {
               className="link-nav">
               <Typography p="2px 10px">BASHKY page</Typography>
             </NavLink>
-            <NavLink
-              to="/servises"
-              style={{
-                borderRadius: "3px",
-                background: "rgba(255, 136, 0, 0.504)",
-                color: "white",
-                textDecoration: "none",
-              }}
-              className="link-nav">
-              <Typography p=" 2px 10px">Uslugalar</Typography>
-            </NavLink>
+
+            {location.pathname === "/list" ? (
+              <span style={{ cursor: "pointer" }}>Каталог</span>
+            ) : (
+              <NavLink
+                to="/servises"
+                style={{
+                  borderRadius: "3px",
+                  background: "rgba(255, 136, 0, 0.504)",
+                  color: "white",
+                  textDecoration: "none",
+                }}
+                className="link-nav">
+                <Typography p=" 2px 10px">Uslugalar</Typography>
+              </NavLink>
+            )}
+
             <NavLink
               to="/about"
               style={{
@@ -247,22 +257,24 @@ function NavBar() {
             </Link>
           </Box>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <LiveSearch />
+            {/* <LiveSearch /> */}
 
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="warning">
-              <Badge badgeContent={4} color="primary">
-                <ShoppingCartIcon />
-              </Badge>
-            </IconButton>
+            <Rlink to="/cart">
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                color="warning">
+                <Badge badgeContent={cartCount} color="primary">
+                  <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+            </Rlink>
 
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="warning">
-              <Badge badgeContent={17} color="primary">
+              <Badge badgeContent={1} color="primary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>

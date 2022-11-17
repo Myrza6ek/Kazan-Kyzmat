@@ -1,11 +1,11 @@
 {
   "products": [
     {
-      "category": "qweqweqweq",
-      "fio": "ertetrewtrerw",
-      "numberTel": "4355",
+      "category": "cow",
+      "fio": "mamatkarim",
+      "numberTel": "4355999",
       "activity": "tertwtwrtwertwet",
-      "price": "35220000000",
+      "price": "3520",
       "img": "https://thumbs.dreamstime.com/z/%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC-%D0%BA%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D1%82%D0%B0%D0%BD%D0%B0-102091730.jpg",
       "description": "qweqeqweqweqweq",
       "id": 4
@@ -15,30 +15,94 @@
       "fio": "ertetrewtrerw",
       "numberTel": "43523",
       "activity": "tertwtwrtwertwet",
-      "price": "35885858",
+      "price": "358",
       "img": "https://thumbs.dreamstime.com/z/%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9-%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC-%D0%BA%D1%8B%D1%80%D0%B3%D1%8B%D0%B7%D1%81%D1%82%D0%B0%D0%BD%D0%B0-102091730.jpg",
       "description": "qweqeqweqweqweq",
       "id": 5
     },
     {
-      "category": "aaaaaaaaaaaaaaa",
-      "fio": "aaaaaaaaa",
+      "category": "sheep",
+      "fio": "Kamchy",
       "numberTel": "22222222222",
-      "activity": "wwqqqqqqqqqqqq",
-      "price": 222222222222,
-      "img": "aaaaaaaaaaa",
+      "activity": "Kasapchy",
+      "price": "2000",
+      "img": "https://st-1.akipress.org/st_gallery/32/1130632.4d835c433adec0752f4191c4ddb27df0.jpg",
       "description": "aaaaaaaaaaaaa",
       "id": 6
     },
     {
-      "category": "w",
-      "fio": "w",
-      "numberTel": "2",
-      "activity": "w",
-      "price": 2,
-      "img": "w",
+      "category": "horse",
+      "fio": "Tazabek",
+      "numberTel": "666666",
+      "activity": "gomoseksalu",
+      "price": "9009",
+      "img": "https://deputat.kg/wp-content/uploads/2022/04/1037052937_248_0_898_650_1920x0_80_0_0_ab3e76de8bcd6826d90eb9936bf4ac51.jpg",
       "description": "2w",
       "id": 8
+    },
+    {
+      "category": "sheep",
+      "fio": "Sadyr",
+      "numberTel": "12313123",
+      "activity": "Dakansa",
+      "price": "989",
+      "img": "https://economist.kg/wp-content/uploads/2022/01/economist.kg-1.png",
+      "description": "shqwpethpqwpquehrgr",
+      "id": 9
+    },
+    {
+      "category": "sheep",
+      "fio": "Loro Piano",
+      "numberTel": "34752345982",
+      "activity": "Kakaya LORA?",
+      "price": "5923",
+      "img": "https://barometr.kg/storage/app/uploads/public/5c9/1c2/b78/5c91c2b7860b4004159934.jpg",
+      "description": "Франкфурт Маяне",
+      "id": 10
+    },
+    {
+      "category": "kelinka",
+      "fio": "Sabina",
+      "numberTel": "93452352",
+      "activity": "ичеги чабак жууш",
+      "price": "5234",
+      "img": "https://static.exk.kz/posts/2016/07/25811/4374a9032470d4e7ecd288a39c8a6780.jpg",
+      "description": "зукезцушкрцушпрцкуш",
+      "id": 11
+    },
+    {
+      "category": "a",
+      "fio": "q",
+      "numberTel": "2",
+      "activity": "2",
+      "price": 2,
+      "img": "2",
+      "description": "2\n",
+      "id": 12
+    },
+    {
+      "category": "kelinka",
+      "fio": "Мимоза",
+      "numberTel": "2131",
+      "activity": "вйцвйв",
+      "price": 12313,
+      "img": "https://i.ytimg.com/vi/-7lPPQIuz0A/sddefault.jpg",
+      "description": "цдулкпрцукшгп",
+      "id": 13
+    }
+  ],
+  "comments": [
+    {
+      "user": "fool_bull@mail.ru",
+      "name": "patel",
+      "comment": "I just throw them into the oven straight from the freezer on some cooking paper, evenly spaced, for 20-30 minutes at 170-180c and they come out perfectly every single time. No thawing, no clean up, no washing frying pans etc. They remind me of Arby’s curly fries but honestly, they’re tastier. I usually gobble them down with some garlic mayo. Do recommend.",
+      "id": 2
+    },
+    {
+      "user": "foolbull35@gmail.com",
+      "name": "Mirdin",
+      "comment": "Отличная работа, Мырза! Продолжайте в том же духе!",
+      "id": 3
     }
   ]
 }
