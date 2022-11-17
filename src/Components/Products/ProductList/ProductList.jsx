@@ -50,7 +50,7 @@ const ProductList = () => {
 
       <Grid
         sx={{
-          width: "auto",
+          width: "92%",
           borderRadius: "4px",
           display: "flex",
           justifyContent: "center",

@@ -13,7 +13,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { Button, CardMedia, Link } from "@mui/material";
+import { Button, Card, CardMedia, Link, ListItemText } from "@mui/material";
 import { Link as Rlink, NavLink, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";

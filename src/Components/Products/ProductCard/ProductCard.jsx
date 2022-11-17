@@ -38,7 +38,12 @@ const ProductCard = ({ obj }) => {
         className="prod_card"
         variant="outlined"
         // backgroundColor="aliceblue"
-        sx={{ width: 240, margin: "20px 10px 0" }}>
+        sx={{
+          width: 240,
+          margin: "20px 10px 0",
+          bgcolor: "rgba(43, 34, 33, 0.5)",
+          borderRadius: "0px",
+        }}>
         <Typography level="h1" fontSize="xl" sx={{ mb: 0.5 }}>
           {obj.fio}
         </Typography>

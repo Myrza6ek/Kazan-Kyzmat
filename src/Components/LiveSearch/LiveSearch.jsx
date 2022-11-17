@@ -65,7 +65,7 @@ const LiveSearch = () => {
       <Search
         style={{
           margin: "20px auto",
-          width: "92%",
+          width: "30%",
           backgroundColor: "rgba(227, 221, 221, 0.769)",
           color: "rgb(13, 16, 44)",
         }}

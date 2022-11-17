@@ -69,10 +69,12 @@ const Servises = () => {
           sx={{
             fontWeight: "bold",
             // fontSize: "100px",
-            color: "rgb(114, 249, 249)",
+            // color: "rgb(208, 251, 251)",
+            color: "rgb(201, 239, 233)",
+
             flexGrow: 1,
-            // bgcolor: "rgba(51, 29, 108, 0.761)",
-            bgcolor: "rgb(60 57 67 / 50%)",
+            // bgcolor: "rgba(53, 39, 90, 0.761)",
+            bgcolor: "rgb(60 57 67 / 70%)",
             display: "flex",
             height: "auto",
           }}>

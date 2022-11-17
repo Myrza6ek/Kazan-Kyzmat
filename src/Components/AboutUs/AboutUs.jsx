@@ -22,12 +22,19 @@ const AboutUs = () => {
         }}>
         <Card style={{ backgroundColor: "rgb(43, 34, 33)" }}>
           <Typography variant="h6" padding="70px" color="white">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat
-            quidem molestias commodi tempore in laborum id illo. Exercitationem
-            dolores blanditiis minima aperiam iure voluptatem, natus assumenda
-            illo consequatur iusto praesentium fugit delectus sed, maxime
-            sapiente facere consequuntur quam cum illum molestiae, pariatur
-            explicabo repudiandae velit. Accusamus mollitia quasi repellat amet.
+            Кой союп, устукан тартуу ата-бабабыздан калган салт, үрп-адаттар
+            акыркы учурларда унутта калып бара жаткансыйт. Заман өзгөрүп, доор
+            алмашкан сайын өзүбүздү заманбап адам катары көрсөткүбүз келгени
+            жашыруун эмес. Улуу адамдардын «Жаштар эч нерсени билбей калды,
+            кыргыз элинин нукура салттары ушинтип эле унутта калабы» деп
+            кейиштүү айткан кептерин кулак сыртынан кетирип жатканыбыз анык.
+            Конок келсе кой союп сыйлоо биздин ата-бабабыздан калган жакшы
+            жөрөлгөлөрдүн бири. Азыркы заманда акчаң болсо баары даяр, конок
+            тосо турган болсоң мал базарга барып ошол эле жерден алган малыңды
+            сойдуруп, жиликтетип, ал тургай ичеги-карынын жуудуруп алып келсең
+            болот. Бирок эр жигиттин кой союп аны жиликтөөнү, эт бышырып табак
+            тартууну билбегени уят катары каралаарын эске салып касапчы боло
+            албаса да анын эрежелерин биле жүрсүн дедик.
           </Typography>
         </Card>
 
